@@ -11,7 +11,7 @@ def ler_numero():
     numero_lido = 0
     numero_valido = False
     
-    while (numero_valido == False or (numero_lido < 1 or numero_lido > 9) ):
+    while numero_valido == False or (numero_lido < 1 or numero_lido > 9):
         leu = input('Insere número pretendido de 1-9: ')
         
         numero_valido = leu.isnumeric()
@@ -104,10 +104,15 @@ def tem_espaco(quadro, posicao):
 # MAIN
 continuar_jogo = True
 
-while (continuar_jogo == True):
+while continuar_jogo == True:
     clear_output()
-    quadro = [' '] * 10
-    jogadores = {'X':'', 'O':''}
+
+    # QUADRO - Representação de teclado numérico (numpad)
+    # 7|8|9
+    # 4|5|6
+    # 1|2|3
+    quadro = [' '] * 10 # posição 0 vai ser ignorada e usamos indice de 1-9 respectivamente
+    jogadores = {'X': '', 'O': ''}
 
     print('Bem vindos ao Tic-Tac-Toe do ☺☺☺ André Gaspar Ribeiro ☺☺☺ \n')
     
@@ -118,7 +123,7 @@ while (continuar_jogo == True):
     ganhou = False
     num_jogada = 0
     
-    while(True):
+    while True:
         
         posicao_valida = False
         

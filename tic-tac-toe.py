@@ -1,10 +1,10 @@
 from IPython.display import clear_output
 
 def mostra_quadro(quadro):
-    clear_output()    
-    print(quadro[7]+'|'+quadro[8]+'|'+quadro[9])
-    print(quadro[4]+'|'+quadro[5]+'|'+quadro[6])
-    print(quadro[1]+'|'+quadro[2]+'|'+quadro[3])
+    clear_output()
+    print(quadro[7] + '|' + quadro[8] + '|' + quadro[9] + '         7|8|9')
+    print(quadro[4] + '|' + quadro[5] + '|' + quadro[6] + '   ->>   4|5|6')
+    print(quadro[1] + '|' + quadro[2] + '|' + quadro[3] + '         1|2|3')
 
 
 def ler_numero():
@@ -114,7 +114,7 @@ while continuar_jogo == True:
     quadro = [' '] * 10 # posição 0 vai ser ignorada e usamos indice de 1-9 respectivamente
     jogadores = {'X': '', 'O': ''}
 
-    print('Bem vindos ao Tic-Tac-Toe do ☺☺☺ André Gaspar Ribeiro ☺☺☺ \n')
+    print('Bem vindos ao Tic-Tac-Toe do *** André Gaspar Ribeiro *** \n')
     
     jogadores['X'] = ler_nome('X')
     jogadores['O'] = ler_nome('O')

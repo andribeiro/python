@@ -1,7 +1,11 @@
-from IPython.display import clear_output
+import os
+
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+    print('Bem vindos ao Tic-Tac-Toe do *** André Gaspar Ribeiro *** \n')
 
 def mostra_quadro(quadro):
-    clear_output()
+    cls()
     print(quadro[7] + '|' + quadro[8] + '|' + quadro[9] + '         7|8|9')
     print(quadro[4] + '|' + quadro[5] + '|' + quadro[6] + '   ->>   4|5|6')
     print(quadro[1] + '|' + quadro[2] + '|' + quadro[3] + '         1|2|3')
@@ -83,7 +87,7 @@ def ler_continuar():
         return ler_continuar()
     
     if 'S' == continuar:
-        clear_output()
+        cls()
         return True
     
     return False
@@ -105,7 +109,7 @@ def tem_espaco(quadro, posicao):
 continuar_jogo = True
 
 while continuar_jogo == True:
-    clear_output()
+    cls()
 
     # QUADRO - Representação de teclado numérico (numpad)
     # 7|8|9
@@ -113,8 +117,6 @@ while continuar_jogo == True:
     # 1|2|3
     quadro = [' '] * 10 # posição 0 vai ser ignorada e usamos indice de 1-9 respectivamente
     jogadores = {'X': '', 'O': ''}
-
-    print('Bem vindos ao Tic-Tac-Toe do *** André Gaspar Ribeiro *** \n')
     
     jogadores['X'] = ler_nome('X')
     jogadores['O'] = ler_nome('O')
@@ -145,7 +147,7 @@ while continuar_jogo == True:
             break
             
         if quadro_cheio(quadro) == True:
-            print('Empate! (*_*)')
+            print('\nEmpate! (*_*)')
             break
 
         if posicao_valida:
